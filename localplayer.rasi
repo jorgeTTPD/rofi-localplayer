@@ -1,0 +1,160 @@
+configuration {
+    show-icons:                 true;
+}
+
+* {
+    background:     #1e1e2e0D;
+    background-alt: #000000CC;
+    foreground:     #cdd6f4FF;
+    selected:       #89b4faFF;
+    urgent:         #f38ba8FF;
+    muted:          #6c7086FF;
+    border:         #3a3a3aCC;
+    dark:           #1e1e2eFF;
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    width:                      800px;
+    enabled:                    true;
+    cursor:                     "default";
+    background-color:           @background;
+    border:                     1px solid;
+    border-color:               @border;
+    border-radius:              10px;
+    padding:                    16px;
+}
+
+mainbox {
+    enabled:                    true;
+    spacing:                    14px;
+    background-color:           transparent;
+    children:                   [ "inputbar", "contentbox" ];
+}
+
+inputbar {
+    enabled:                    true;
+    spacing:                    10px;
+    padding:                    8px 12px;
+    border-radius:              10px;
+    background-color:           @background-alt;
+    text-color:                 @foreground;
+    children:                   [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                    true;
+    background-color:           transparent;
+    text-color:                 @selected;
+    font:                       "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    enabled:                    true;
+    background-color:           transparent;
+    text-color:                 @foreground;
+    cursor:                     "text";
+    placeholder:                "Busca canción o artista...";
+    placeholder-color:          @muted;
+    font:                       "JetBrainsMono Nerd Font 12";
+}
+
+contentbox {
+    orientation:                horizontal;
+    spacing:                    16px;
+    background-color:           transparent;
+    children:                   [ "leftbox", "rightbox" ];
+}
+
+leftbox {
+    orientation:                vertical;
+    spacing:                    10px;
+    expand:                     false;
+    background-color:           transparent;
+    children:                   [ "icon-cover", "message" ];
+}
+
+icon-cover {
+    expand:                     false;
+    size:                       200;
+    squared:                    true;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+    background-image:           url("~/.cache/localplayer/nocover.jpg", width);
+}
+
+message {
+    expand:                     true;
+    padding:                    10px 12px;
+    border-radius:              10px;
+    background-color:           @background-alt;
+    text-color:                 @foreground;
+    children:                   [ "textbox" ];
+}
+
+textbox {
+    background-color:           transparent;
+    text-color:                 inherit;
+    markup:                     true;
+    vertical-align:             0.0;
+    font:                       "JetBrainsMono Nerd Font Bold 12";
+}
+
+rightbox {
+    orientation:                vertical;
+    expand:                     true;
+    background-color:           transparent;
+    children:                   [ "listview" ];
+}
+
+listview {
+    enabled:                    true;
+    columns:                    1;
+    lines:                      10;
+    dynamic:                    false;
+    fixed-height:               true;
+    cycle:                      true;
+    scrollbar:                  false;
+    layout:                     vertical;
+    spacing:                    4px;
+    background-color:           transparent;
+    text-color:                 @foreground;
+    cursor:                     "default";
+}
+
+element {
+    enabled:                    true;
+    spacing:                    8px;
+    padding:                    5px 8px;
+    border-radius:              10px;
+    background-color:           transparent;
+    text-color:                 @foreground;
+    cursor:                     "pointer";
+}
+
+element selected {
+    background-color:           @selected;
+    text-color:                 @dark;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 @foreground;
+}
+
+element-icon {
+    size:                       20px;
+    background-color:           transparent;
+    cursor:                     inherit;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    cursor:                     inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+    font:                       "JetBrainsMono Nerd Font 12";
+}

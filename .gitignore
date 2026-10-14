@@ -1,0 +1,10 @@
+# runtime cache (songs index, playlist, covers, thumbs, sockets)
+/songs.tsv
+/playlist.m3u
+/cover.jpg
+/cover.src
+/nocover.jpg
+/thumbs/
+*.lock
+*.ts
+last.*
