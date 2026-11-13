@@ -4,6 +4,8 @@ Local music player UI for `~/Music` (`cmus` backend) as a rofi script-mode dialo
 
 Bound to `super+p` in my bspwm setup.
 
+<p align="center"><img src="screenshot_20261113_154327.png" width="85%" alt="rofi-localplayer showing the library and cover art"></p>
+
 ## Files
 - `localplayer.sh` — rofi script mode: index, thumbs, playback, theming
 - `launch.sh` — launches rofi and forces input focus (bspwm `focus_follows_pointer` fix)
